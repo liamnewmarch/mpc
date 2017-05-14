@@ -18,20 +18,21 @@ export class CustomPadElement extends HTMLElement {
 
   connectedCallback() {
     this.loadSample();
-    this.addEventListener('mousedown', this.onInputStart);
-    this.addEventListener('mouseup', this.onInputStop);
     this.addEventListener('touchstart', this.onInputStart);
     this.addEventListener('touchend', this.onInputStop);
+    this.addEventListener('mousedown', this.onInputStart);
+    this.addEventListener('mouseup', this.onInputStop);
   }
 
   disconnectedCallback() {
-    this.removeEventListener('mousedown', this.onInputStart);
-    this.removeEventListener('mouseup', this.onInputStop);
     this.removeEventListener('touchstart', this.onInputStart);
     this.removeEventListener('touchend', this.onInputStop);
+    this.removeEventListener('mousedown', this.onInputStart);
+    this.removeEventListener('mouseup', this.onInputStop);
   }
 
-  onInputStart() {
+  onInputStart(event) {
+    event.preventDefault();
     const source = audioContext.createBufferSource();
     source.connect(audioContext.destination);
     source.buffer = this.sample;
