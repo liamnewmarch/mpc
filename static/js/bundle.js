@@ -20,7 +20,7 @@ class CustomMPCElement extends HTMLElement {
     if (node) node.onInputStart();
   }
 
-  onInputStop() {
+  onInputStop(event) {
     const node = [...this.children].find(child =>  child.key === event.key);
     if (node) node.onInputStop();
   }
