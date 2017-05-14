@@ -73,7 +73,7 @@ class CustomPadElement extends HTMLElement {
 
   loadSample() {
     const sample = this.getAttribute('sample');
-    const url = `../audio/${sample}.wav`;
+    const url = `audio/${sample}.wav`;
     fetch(url).then(response => {
       return response.arrayBuffer();
     }).then(buffer => {
