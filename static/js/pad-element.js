@@ -33,6 +33,7 @@ export class CustomPadElement extends HTMLElement {
 
   onInputStart(event) {
     event.preventDefault();
+    event.stopPropagation();
     const source = audioContext.createBufferSource();
     source.connect(audioContext.destination);
     source.buffer = this.sample;
@@ -42,7 +43,6 @@ export class CustomPadElement extends HTMLElement {
 
   onInputStop() {
     this.active = false;
-
   }
 
   loadSample() {
