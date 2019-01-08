@@ -1,0 +1,14 @@
+{
+  "name": "mpc",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "serve": "pushd static; python -m SimpleHTTPServer 4000; popd"
+  },
+  "dependencies": {
+    "rollup": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0"
+  }
+}
