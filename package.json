@@ -3,9 +3,12 @@
   "private": true,
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "serve": "pushd static; python -m SimpleHTTPServer 4000; popd"
+    "build:watch": "npm run build -- -w",
+    "serve": "pushd static; python -m SimpleHTTPServer 4000; popd",
+    "start": "concurrently npm:build:watch npm:serve"
   },
   "dependencies": {
+    "concurrently": "^4.1.0",
     "rollup": "^1.0.2"
   },
   "devDependencies": {
