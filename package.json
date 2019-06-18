@@ -2,16 +2,10 @@
   "name": "mpc",
   "private": true,
   "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "build:watch": "npm run build -- -w",
-    "serve": "pushd static; python -m SimpleHTTPServer 4000; popd",
-    "start": "concurrently npm:build:watch npm:serve"
+    "serve": "pushd static; python -m SimpleHTTPServer 4000; popd"
   },
-  "dependencies": {
-    "concurrently": "^4.1.0",
-    "rollup": "^1.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "eslint": "^5.12.0"
+    "eslint": "^5.16.0"
   }
 }
