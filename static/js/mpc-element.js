@@ -16,12 +16,12 @@ export class CustomMPCElement extends HTMLElement {
   }
 
   onInputStart(event) {
-    const node = [...this.children].find(child =>  child.key === event.key);
+    const node = [...this.children].find(child => child.key === event.key);
     if (node) node.onInputStart();
   }
 
   onInputStop(event) {
-    const node = [...this.children].find(child =>  child.key === event.key);
+    const node = [...this.children].find(child => child.key === event.key);
     if (node) node.onInputStop();
   }
 }

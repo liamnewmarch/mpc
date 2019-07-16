@@ -6,4 +6,4 @@ This is a basic Web Audio MPC for playing back 808 samples. It’s built using W
 - Uses JS Modules with a bundled fallback.
 - Uses Custom Elements from Web Components with included shim.
 
-Hosted here: https://liamnewmarch.github.io/mpc/
+Hosted here: https://liamnewmarch.github.io/mpc/static/

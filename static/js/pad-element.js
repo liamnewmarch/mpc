@@ -16,8 +16,8 @@ export class CustomPadElement extends HTMLElement {
     return this.getAttribute('key');
   }
 
-  connectedCallback() {
-    this.loadSample();
+  async connectedCallback() {
+    this.sample = await this.loadSample();
     this.addEventListener('touchstart', this.onInputStart);
     this.addEventListener('touchend', this.onInputStop);
     this.addEventListener('mousedown', this.onInputStart);
@@ -45,15 +45,11 @@ export class CustomPadElement extends HTMLElement {
     this.active = false;
   }
 
-  loadSample() {
+  async loadSample() {
     const sample = this.getAttribute('sample');
     const url = `audio/${sample}.wav`;
-    fetch(url).then(response => {
-      return response.arrayBuffer();
-    }).then(buffer => {
-      return audioContext.decodeAudioData(buffer);
-    }).then(sample => {
-      this.sample = sample;
-    })
+    const response = await fetch(url);
+    const buffer = await response.arrayBuffer();
+    return audioContext.decodeAudioData(buffer);
   }
 }

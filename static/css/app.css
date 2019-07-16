@@ -1,13 +1,14 @@
-:root {
-  background-color: #222;
-  color: #fff;
-  font: 300 14px / 1.2 Helvetica Neue, sans-serif;
-}
-
 *,
 *::after,
 *::before {
+  box-sizing: inherit;
+}
+
+html {
+  background-color: #222;
   box-sizing: border-box;
+  color: #fff;
+  font: 300 14px / 1.2 Helvetica Neue, sans-serif;
 }
 
 body {

@@ -4,8 +4,8 @@
   "scripts": {
     "serve": "pushd static; python -m SimpleHTTPServer 4000; popd"
   },
-  "dependencies": {},
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "eslint": "^6.0.1",
+    "eslint-config-google": "^0.13.0"
   }
 }
