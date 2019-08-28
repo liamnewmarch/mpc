@@ -5,7 +5,7 @@
     "serve": "pushd static; python -m SimpleHTTPServer 4000; popd"
   },
   "devDependencies": {
-    "eslint": "^6.0.1",
+    "eslint": "^6.2.2",
     "eslint-config-google": "^0.13.0"
   }
 }
